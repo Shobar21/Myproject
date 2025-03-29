@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <section class="detail-section container my-5">
+      <div class="row justify-content-center align-items-center">
+        <!-- Image Column -->
+        <div class="col-lg-5 col-md-6 col-sm-10 text-center">
+          <img src="images/spaghetti.png" class="detail-img img-fluid" alt="Item Image" />
+        </div>
+        <!-- Details Column -->
+        <div class="col-lg-6 col-md-8 col-sm-12 mt-4 mt-md-0 text-center text-md-start">
+          <h1 style="color: darkorange"></h1>
+          <p class="text"></p>
+          <div class="price-section my-3">
+            <h4>Price: <span id="price">$0</span></h4>
+          </div>
+          <div class="mb-3">
+            <select class="form-select d-inline w-auto">
+              <option value="full">Full</option>
+              <option value="half">Half</option>
+            </select>
+            <select class="form-select d-inline w-auto m-2">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="3">4</option>
+              <option value="3">5</option>
+            </select>
+          </div>
+          <button class="btn btn-add w-30 w-md-auto">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Get URL parameters
+        const params = new URLSearchParams(window.location.search)
+        const name = params.get('name')
+        const image = params.get('image')
+        const text = params.get('text')
+        const priceFull = params.get('priceFull')
+        const priceHalf = params.get('priceHalf')
+
+        // Update page content dynamically
+        document.querySelector('.detail-img').src = image
+        document.querySelector('.detail-img').alt = name
+        document.querySelector('h1').textContent = name
+        document.querySelector('p').textContent = text
+
+        // Price Selection
+        const priceSelect = document.querySelector('.form-select')
+        const quantitySelect = document.querySelectorAll('.form-select')[1]
+        const priceDisplay = document.getElementById('price')
+
+        // Set default price as Full Price
+        priceDisplay.textContent = `$${priceFull}`
+
+        // Change displayed price when user selects a different option
+        priceSelect.addEventListener('change', () => {
+          priceDisplay.textContent = priceSelect.value === 'full' ? `$${priceFull}` : `$${priceHalf}`
+        })
+
+        // Add to Cart button click event
+        document.querySelector('.btn-add').addEventListener('click', () => {
+          const selectedSize = priceSelect.value
+          const selectedQuantity = parseInt(quantitySelect.value)
+          const selectedPrice = selectedSize === 'full' ? priceFull : priceHalf
+
+          // Create a cart item object
+          const cartItem = {
+            name: name,
+            image: image,
+            size: selectedSize,
+            quantity: selectedQuantity,
+            price: selectedPrice,
+          }
+
+          // Get existing cart data from localStorage
+          let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+          // Add the new item to the cart
+          cart.push(cartItem)
+
+          // Save updated cart back to localStorage
+          localStorage.setItem('cart', JSON.stringify(cart))
+
+          // Redirect back to index.html
+          window.location.href = 'index.html'
+        })
+
+        // Function to update cart badge
+        function updateCartBadge() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || []
+          document.getElementById('cart-badge').textContent = cart.length
+        }
+
+        // Load cart badge count on page load
+        updateCartBadge()
+      })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

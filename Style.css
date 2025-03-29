@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap');
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* navbar */
+.navbar {
+  background-color: rgb(26, 26, 63);
+  color: white;
+}
+.nav-link {
+  color: white;
+  font-weight: 400;
+  font-size: 17px;
+}
+.nav-link:hover {
+  color: orange;
+}
+.navbar-brand {
+  font-family: 'Lobster', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: orange;
+}
+.navbar-toggler {
+  border-color: white; /* White border for the button */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.btn-search {
+  background: darkorange;
+  color: white;
+}
+.btn-search:hover {
+  background: transparent;
+  border: 1px solid darkorange;
+}
+#cart-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 24px;
+}
+
+/* Cart Badge (Number of Items) */
+#cart-badge {
+  position: absolute;
+  top: 9px;
+  right: 120px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 50%;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url('images/Background.jpeg') center/cover no-repeat;
+  height: 330px;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Opacity effect */
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.delicious {
+  color: orange;
+}
+.lead {
+  width: 430px;
+}
+.btn-order {
+  background-color: darkorange;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.btn-learn {
+  background-color: transparent;
+  color: black;
+  border: 1px solid darkorange;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.btn-learn:hover {
+  background-color: darkorange;
+  color: white;
+}
+.btn-order:hover {
+  background-color: transparent;
+  border: 1px solid darkorange;
+}
+/* menu section */
+.our-menu {
+  color: darkorange;
+  font-weight: bold;
+}
+
+.category {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+.category:hover {
+  text-decoration-line: underline;
+  text-decoration-color: darkorange;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+.btn-details {
+  background: rgb(26, 26, 63);
+  color: white;
+  border: 2px solid darkorange;
+}
+.btn-details:hover {
+  color: black;
+  border: 2px solid darkorange;
+  background: transparent;
+}
+.price-btn {
+  border: 2px solid darkorange;
+  color: black;
+}
+.price-btn:hover {
+  background-color: rgb(26, 26, 63);
+  color: white;
+  border: 2px solid darkorange;
+}
+.card {
+  border: 2px solid darkorange;
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card-img-top {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+/* details section */
+.detail-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.detail-section {
+  background-color: rgb(26, 26, 63);
+  color: white;
+  border-radius: 10px;
+  width: 70%;
+  height: 500px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.form-select {
+  border: 3px solid darkorange;
+}
+.text {
+  font-size: 20px;
+}
+.btn-add {
+  background-color: darkorange;
+  color: white;
+}
+.btn-add:hover {
+  background-color: transparent;
+  color: white;
+  border: 2px solid darkorange;
+}
+
+/* about us */
+.about-us {
+  /* background-color: rgb(26, 26, 63); */
+  color: black;
+  border: 2px solid rgb(26, 26, 63);
+  border-radius: 7px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.about-img {
+  animation: rotation 5s linear infinite;
+}
+.special {
+  font-family: 'Lobster', sans-serif;
+}
+.para-about {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 18px;
+}
+/* services */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.highlight {
+  background: darkorange;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+.Read-more {
+  background-color: transparent;
+  border: 2px solid darkorange;
+}
+.Read-more:hover {
+  background-color: darkorange;
+  color: white;
+}
+
+.service-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-color: rgb(245, 219, 171);
+  /* border: 1px solid black; */
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+/* footer */
+.footer-section {
+  background-color: rgb(26, 26, 63);
+  color: white;
+  height: 300px;
+}
+
+@media (min-width: 400px) and (max-width: 914px) {
+  /* cart */
+  #cart-badge {
+    position: absolute;
+    top: 9px;
+    right: 100px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 50%;
+  }
+  /* hero section */
+  .lead {
+    width: 350px;
+  }
+  /* menu section */
+  .card {
+    margin-left: 1rem;
+  }
+  /* detail section */
+  .detail-section {
+    height: 850px;
+    text-align: justify;
+    font-size: 15px;
+    width: 90%;
+  }
+  /* footer */
+  .footer-section {
+    height: 150px;
+    text-align: center;
+  }
+  .hor {
+    margin-top: -6px;
+  }
+  .lastline {
+    margin-top: -5px;
+    font-size: 14px;
+  }
+  .links,
+  .data,
+  .fot-para {
+    display: none;
+  }
+}
