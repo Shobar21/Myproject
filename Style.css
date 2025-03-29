@@ -279,7 +279,7 @@ body {
   height: 300px;
 }
 
-@media (min-width: 400px) and (max-width: 914px) {
+@media (min-width: 360px) and (max-width: 914px) {
   /* cart */
   #cart-badge {
     position: absolute;
