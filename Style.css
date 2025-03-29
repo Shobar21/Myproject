@@ -324,3 +324,10 @@ body {
     display: none;
   }
 }
+@media (max-width: 680) {
+  .links,
+  .data,
+  .fot-para {
+    display: none;
+  }
+}
