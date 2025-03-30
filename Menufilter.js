@@ -232,3 +232,29 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // checkout after bedge not show
+// reviews
+document.addEventListener('DOMContentLoaded', function () {
+  const carousel = document.querySelector('#testimonialCarousel')
+  const cards = document.querySelectorAll('.testimonial-card')
+
+  // Handle card clicks
+  cards.forEach((card) => {
+    card.addEventListener('click', function () {
+      document.querySelectorAll('.testimonial-card').forEach((c) => c.classList.remove('testimonial-active'))
+      this.classList.add('testimonial-active')
+    })
+  })
+
+  // Handle slide change
+  carousel.addEventListener('slid.bs.carousel', function () {
+    document.querySelectorAll('.carousel-item').forEach((slide) => {
+      if (slide.classList.contains('active')) {
+        document.querySelectorAll('.testimonial-card').forEach((c) => c.classList.remove('testimonial-active'))
+        const firstCard = slide.querySelector('.testimonial-card')
+        if (firstCard) {
+          firstCard.classList.add('testimonial-active')
+        }
+      }
+    })
+  })
+})
