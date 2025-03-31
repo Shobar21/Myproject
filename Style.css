@@ -295,7 +295,13 @@ body {
   color: white;
   transform: scale(1.05);
 }
-
+.now-order {
+  color: white;
+  text-decoration: none;
+}
+.now-order:hover {
+  color: black;
+}
 .quote {
   font-size: 2rem;
   color: orange;
