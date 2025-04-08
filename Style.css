@@ -337,8 +337,8 @@ body {
 @media (min-width: 360px) and (max-width: 914px) {
   /* cart */
   #cart-badge {
-    top: 21rem; /* Move badge down */
-    right: 20px; /* Adjust right position if needed */
+    top: 21rem;
+    right: 20px;
   }
   /* hero section */
   .lead {
