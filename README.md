@@ -75,10 +75,4 @@ push the project to GitHub, import the repository on Vercel and deploy
 - Replace the sample customer names and reviews with real ones.
 - Update the phone number and footer details in the contact section.
 
-## Screenshots
-
-Add screenshots of the home page, menu and cart here:
-
-```
-![Home page](screenshots/home.png)
 ```
