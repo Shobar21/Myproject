@@ -82,11 +82,3 @@ Add screenshots of the home page, menu and cart here:
 ```
 ![Home page](screenshots/home.png)
 ```
-
-## Author
-
-Your name · your GitHub profile link
-
-## License
-
-For learning and personal use.
